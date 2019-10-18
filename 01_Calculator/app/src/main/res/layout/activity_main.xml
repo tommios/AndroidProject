@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:gravity="right|center"
+            android:gravity="end|center"
             android:textSize="@dimen/text_size" />
 
         <TextView
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:gravity="right|center"
+            android:gravity="end|center"
             android:textSize="@dimen/text_size" />
 
     </LinearLayout>
@@ -56,7 +56,7 @@
                 android:textColor="@color/colorAccent"
                 android:textSize="@dimen/button_text_size"
                 android:textStyle="bold"
-                android:onClick="onDeleteClick"/>
+                android:onClick="onDeleteClick" />
 
             <Button
                 android:id="@+id/buttonErase"
@@ -65,7 +65,7 @@
                 android:layout_weight="1"
                 android:text="&lt;-"
                 android:textSize="@dimen/button_text_size"
-                android:onClick="onDeleteClick"/>
+                android:onClick="onDeleteClick" />
 
             <Button
                 android:id="@+id/buttonPercent"
@@ -82,7 +82,7 @@
                 android:layout_weight="1"
                 android:text="/"
                 android:textSize="@dimen/button_text_size"
-                android:onClick="onOperationClick"/>
+                android:onClick="onOperationClick" />
         </LinearLayout>
 
         <LinearLayout
@@ -125,7 +125,7 @@
                 android:layout_weight="1"
                 android:text="*"
                 android:textSize="@dimen/button_text_size"
-                android:onClick="onOperationClick"/>
+                android:onClick="onOperationClick" />
         </LinearLayout>
 
         <LinearLayout
@@ -168,7 +168,7 @@
                 android:layout_weight="1"
                 android:text="-"
                 android:textSize="@dimen/button_text_size"
-                android:onClick="onOperationClick"/>
+                android:onClick="onOperationClick" />
 
         </LinearLayout>
 
@@ -212,7 +212,7 @@
                 android:layout_weight="1"
                 android:text="+"
                 android:textSize="@dimen/button_text_size"
-                android:onClick="onOperationClick"/>
+                android:onClick="onOperationClick" />
         </LinearLayout>
 
         <LinearLayout
@@ -255,7 +255,7 @@
                 android:textColor="@color/colorAccent"
                 android:textSize="@dimen/button_text_size"
                 android:textStyle="bold"
-                android:onClick="onOperationClick"/>
+                android:onClick="onOperationClick" />
 
         </LinearLayout>
 
