@@ -146,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
+        resultField.setTextSize(28);
         resultField.setText(operand.toString());    //.replace('.', ','));
         numberField.setText("");
     }
