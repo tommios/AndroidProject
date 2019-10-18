@@ -46,14 +46,31 @@ public class MainActivity extends AppCompatActivity {
 
     // обработка нажатия на числовую кнопку
     public void onNumberClick(View view) {
-
         Button button = (Button) view;
         numberField.append(button.getText());
-//        numberField.append("\n");
-
         if (lastOperation.equals("=") && operand != null) {
             operand = null;
         }
+    }
+
+    // обработка нажатия на кнопку-разделитель разрядов
+    public void onPointClick(View view) {
+        Button button = (Button) view;
+        numberField.append(button.getText());
+    }
+
+    // обработка нажатия на кнопку знака плюс-минус числа
+    public void onPlusMinusClick(View view) {
+        Button button = (Button) view;
+        String number = numberField.getText().toString();
+        if (number.substring(0, 1).equals("-")) {
+            number = number.substring(1);
+        } else {
+            number = "-" + number;
+        }
+        numberField.setText(number);
+
+
     }
 
     // обработка нажатия на кнопку операции

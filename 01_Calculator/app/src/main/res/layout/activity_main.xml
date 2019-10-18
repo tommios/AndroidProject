@@ -227,16 +227,17 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="+/-"
-                android:textSize="@dimen/button_text_size" />
+                android:textSize="@dimen/button_text_size"
+                android:onClick="onPlusMinusClick"/>
 
             <Button
                 android:id="@+id/button0"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="onNumberClick"
                 android:text="0"
-                android:textSize="@dimen/button_text_size" />
+                android:textSize="@dimen/button_text_size"
+                android:onClick="onNumberClick" />
 
             <Button
                 android:id="@+id/buttonPoint"
@@ -244,7 +245,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="."
-                android:textSize="@dimen/button_text_size" />
+                android:textSize="@dimen/button_text_size"
+                android:onClick="onPointClick" />
 
             <Button
                 android:id="@+id/buttonEquals"
