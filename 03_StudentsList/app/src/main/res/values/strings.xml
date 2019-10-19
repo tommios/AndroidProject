@@ -3,4 +3,8 @@
     <string name="student_name">Name</string>
     <string name="student_surname">Surname</string>
     <string name="student_group">Group</string>
+    <string name="add">ADD</string>
+    <string name="remove">REMOVE</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
 </resources>

@@ -5,13 +5,15 @@ public class Student {
     private String surname; // Фамилия
     private String group;  // Группа
     private int flagResource; // ресурс флага
+    Boolean box;
 
-    public Student(String name, String surname, String group, int flag) {
+    public Student(String name, String surname, String group, int flag, Boolean box) {
 
         this.name = name;
         this.surname = surname;
         this.group = group;
         this.flagResource = flag;
+        this.box = box;
     }
 
     public String getName() {
@@ -45,4 +47,11 @@ public class Student {
     public void setFlagResource(int flagResource) {
         this.flagResource = flagResource;
     }
+
+    public Boolean getBox(){return this.box;}
+
+    public void setBox(Boolean box) {
+        this.box = box;
+    }
+
 }
