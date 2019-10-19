@@ -14,7 +14,8 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Student> students = new ArrayList();
     ListView studentsList;
     StudentAdapter adapter;
-    Intent intent = getIntent();
+
+    private static  final int REQUEST_ACCESS_TYPE=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,24 +44,33 @@ public class MainActivity extends AppCompatActivity {
         // Создаем объект Intent для вызова новой Activity
         Intent intent = new Intent(this, AddActivity.class);
         // запуск activity
-        startActivity(intent);
+        startActivityForResult(intent, REQUEST_ACCESS_TYPE);
 
-        // Получаем сообщение из объекта intent
 
-        String msgName = intent.getStringExtra(AddActivity.ADD_MESSAGE_Name);
-        String msgSurname = intent.getStringExtra(AddActivity.ADD_MESSAGE_Surname);
-        String msgGroup = intent.getStringExtra(AddActivity.ADD_MESSAGE_Group);
-        String msgMale = intent.getStringExtra(AddActivity.ADD_MESSAGE_Male);
-        String temp = null;
-        if(msgMale=="Male") {temp="male";}
-        else {temp="female";}
+    }
 
-        if(temp != null) {
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(requestCode==REQUEST_ACCESS_TYPE){
+            if(resultCode==RESULT_OK){
 
-            students.add(new Student(msgName, msgSurname, msgGroup, R.drawable.male, false));
+                // Получаем сообщение из объекта intent
+                String msgName = data.getStringExtra(AddActivity.ADD_MESSAGE_Name);
+                String msgSurname = data.getStringExtra(AddActivity.ADD_MESSAGE_Surname);
+                String msgGroup = data.getStringExtra(AddActivity.ADD_MESSAGE_Group);
+                String msgMale = data.getStringExtra(AddActivity.ADD_MESSAGE_Male);
+//
+//                String temp = null;
+//                if(msgMale=="Male") {temp="male";}
+//                else {temp="female";}
+
+                students.add(new Student(msgName, msgSurname, msgGroup, R.drawable.male, false));
+                adapter.notifyDataSetChanged();
+            }
         }
-
-
+        else{
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 
     public void onClickRemove(View view){

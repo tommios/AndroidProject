@@ -28,7 +28,7 @@ public class AddActivity extends AppCompatActivity {
     public void addMessage(View view) {
         // действия, совершаемые после нажатия на кнопку
         // Создаем объект Intent для вызова новой Activity
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent data = new Intent(this, MainActivity.class);
 
         // Получаем текстовое поле в текущей Activity
         EditText editTextName = (EditText) findViewById(R.id.editTextName);
@@ -43,13 +43,17 @@ public class AddActivity extends AppCompatActivity {
         // Добавляем с помощью свойства putExtra объект -
         // первый параметр - ключ,
         // второй параметр - значение этого объекта
-        intent.putExtra(ADD_MESSAGE_Name, messageName);
-        intent.putExtra(ADD_MESSAGE_Surname, messageSurname);
-        intent.putExtra(ADD_MESSAGE_Group, messageGroup);
-        intent.putExtra(ADD_MESSAGE_Male, messageMale);
+
+        data.putExtra(ADD_MESSAGE_Name, messageName);
+        data.putExtra(ADD_MESSAGE_Surname, messageSurname);
+        data.putExtra(ADD_MESSAGE_Group, messageGroup);
+        data.putExtra(ADD_MESSAGE_Male, messageMale);
 
         // запуск activity
-        startActivity(intent);
+        //startActivity(data);
+
+        setResult(RESULT_OK, data);
+        finish();
     }
 
     public void onRadioButtonClicked(View view) {
