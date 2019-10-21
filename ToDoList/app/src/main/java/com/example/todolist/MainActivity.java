@@ -2,15 +2,15 @@ package com.example.todolist;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-//import android.support.v7.app.AppCompatActivity;
-
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
+// https://commons.apache.org/proper/commons-io/dependency-info.html
 import org.apache.commons.io.FileUtils;
+// build.gradle (Module: app) add :  implementation 'org.apache.commons:commons-io:1.3.2'
 
 import java.io.File;
 import java.io.IOException;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
         lvItems.setAdapter(itemsAdapter);
-        //items.add("Long press to delete any entry");
+        items.add("Long press to delete any entry");
         //items.add("20.10.2019 - Курсовой проект по Android");
 
 
